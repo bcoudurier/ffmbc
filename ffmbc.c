@@ -2455,6 +2455,7 @@ static void validate_video_target(AVFormatContext *s, OutputStream *ost)
         }
     } else if (!strcmp(ost->target, "xdcamhd422")) {
         if ((norm == HD50P || norm == HD60P) &&
+            (ost->st->codec->interlaced < 1) &&
             (ost->st->codec->width != 1280 || ost->st->codec->height != 720)) {
             av_log(NULL, AV_LOG_ERROR, "Error, target %s only supports 1280x720 resolution with "
                     "this frame rate\n", ost->target);
