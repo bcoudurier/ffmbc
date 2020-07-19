@@ -1444,7 +1444,7 @@ int ff_mov_read_stsd_entries(MOVContext *c, AVIOContext *pb, int entries)
             return -1;
         }
         sc->dv_audio_container = 1;
-        st->codec->codec_id = CODEC_ID_PCM_S16LE;
+        st->codec->codec_id = CODEC_ID_PCM_S16BE;
         break;
 #endif
     /* no ifdef since parameters are always those */
